@@ -169,7 +169,8 @@ class TestFilter:
         # Bước 2: Nhập giá trị min và max
         setup.set_price_filter(min_price, max_price)
 
-        product_prices = setup.get_product_prices()
+        product_cards = setup.get_all_products()
+        product_prices = setup.get_all_product_prices(product_cards)
 
         # Bước 3: Kiểm tra tất cả các sản phẩm có giá trong khoảng từ min_price đến max_price
         for price in product_prices:
@@ -188,7 +189,8 @@ class TestFilter:
         # Bước 2: Nhập giá trị min và max
         setup.set_price_filter(min_price, max_price)
 
-        product_prices = setup.get_product_prices()
+        product_cards = setup.get_all_products()
+        product_prices = setup.get_all_product_prices(product_cards)
 
         assert len(product_prices) == 0, "There are products displayed for price you selected, but there should be none."
         
